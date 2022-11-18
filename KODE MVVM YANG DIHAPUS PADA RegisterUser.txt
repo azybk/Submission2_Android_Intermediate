@@ -1,0 +1,77 @@
+KODE MVVM YANG DIHAPUS PADA RegisterUser
+
+FILE RegisterActivity
+
+private lateinit var viewModel: RegisterViewModel
+
+viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+viewModel.postRegisterUser(user)
+
+// COROUTINE observe LIVEDATA
+viewModel.myResponse.observe(this) { response ->
+    if (response.isSuccessful) {
+        Toast.makeText(this@RegisterActivity, response.body()?.message, Toast.LENGTH_SHORT).show()
+        Log.d("RegisterActivity", response.body()?.message.toString())
+    }
+    else {
+        Toast.makeText(this@RegisterActivity, response.message(), Toast.LENGTH_SHORT).show()
+        Log.d("RegisterActivity", response.message())
+    }
+}
+
+// COROUTINE TANPA LIVEDATA
+val resultMsg = viewModel.postRegisterUser(user)
+Toast.makeText(this@RegisterActivity, resultMsg, Toast.LENGTH_SHORT).show()
+Log.d("RegisterActivity", resultMsg.toString())
+
+
+
+// FILE Register VIEW MODEL
+
+class RegisterViewModel: ViewModel() {
+
+    val registerRepository: RegisterRepository = RegisterRepository()
+    var myResponse: MutableLiveData<Response<RegisterResponse>> = MutableLiveData()
+    var myResponseError = ""
+
+    private var myResponse: String? = ""
+
+    // COROUTINE
+    suspend fun postRegisterUser(user: RegisterUser) {
+        viewModelScope.launch {
+            val response = registerRepository.registerUser(user)
+            myResponse.value = response
+        }
+    }
+    
+    // ASYNCHRONOUS (client.enqueue)
+    fun postRegisterUser(user: RegisterUser): String {
+        val myResponse = registerRepository.registerUser2(user)
+
+        return myResponse
+    }
+}
+
+
+
+// FILE Register Repository
+
+class RegisterRepository {
+
+    // COROUTINE
+    suspend fun registerUser(registerRequest: RegisterUser): Response<RegisterResponse> {
+        return ApiConfig().getApiService().registerUser(registerRequest)
+    }
+
+}
+
+
+// FILE ApiService
+
+interface ApiService {
+
+    // COROUTINE
+    @POST("register")
+    suspend fun registerUser(@Body userData: RegisterUser): Response<RegisterResponse>
+
+}

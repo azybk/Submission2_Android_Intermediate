@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Stories</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="nama">nama</string>
+    <string name="user_id">user id</string>
+    <string name="id">id</string>
+    <string name="description">description</string>
+    <string name="token">token</string>
+    <string name="pref_user">pref_user</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera_x">Camera X</string>
+    <string name="upload">Simpan</string>
+    <string name="logout">logout</string>
+    <string name="masukan_deskripsi">masukan deskripsi</string>
+    <string name="timeout">timeout</string>
+    <string name="retry">coba lagi</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps_lagi">MapsActivityLAGI</string>
+</resources>

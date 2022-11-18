@@ -1,0 +1,24 @@
+# ListMapViewModelTest
+a. ketika berhasil menampilkan map
+   - memastikan mengembalikan Result.Success
+   - memastikan data tidak null
+
+b. ketika gagal menampilkan map
+   - memastikan mengembalikan Result.Error
+
+
+# ListStoryViewModelTest
+- memastikan data tidak null
+
+
+# AddStoryViewModelTest
+- memastikan mengembalikan Result.Success
+
+# RegisterViewModelTest
+- memastikan mengembalikan Result.Success ketika register berhasil
+- memastikan mengembalikan Result.Error ketika register gagal
+
+# LoginViewModelTest
+- memastikan mengembalikan Result.Success ketika login berhasil
+- memastikan mengembalikan Result.Error ketika login gagal
+

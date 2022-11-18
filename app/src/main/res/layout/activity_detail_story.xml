@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailStoryActivity">
+
+    <ImageView
+        android:id="@+id/img_item_photo_detail"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:transitionName="photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_id_user_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/img_item_photo_detail"
+        app:layout_constraintTop_toBottomOf="@id/img_item_photo_detail"
+        android:text="@string/id" />
+
+    <TextView
+        android:id="@+id/tv_item_id_user_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:transitionName="id"
+        app:layout_constraintStart_toEndOf="@id/tv_description_detail"
+        app:layout_constraintTop_toTopOf="@id/tv_id_user_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/id" />
+
+    <TextView
+        android:id="@+id/tv_nama_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tv_id_user_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_id_user_detail"
+        android:text="@string/nama" />
+
+    <TextView
+        android:id="@+id/tv_item_nama_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:transitionName="name"
+        app:layout_constraintStart_toEndOf="@id/tv_description_detail"
+        app:layout_constraintTop_toTopOf="@id/tv_nama_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/nama" />
+
+    <TextView
+        android:id="@+id/tv_description_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tv_nama_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_nama_detail"
+        android:text="@string/description" />
+
+    <TextView
+        android:id="@+id/tv_item_description_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/description"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:transitionName="description"
+        app:layout_constraintBottom_toBottomOf="@id/img_item_photo_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_item_nama_detail"
+        app:layout_constraintTop_toTopOf="@id/tv_description_detail"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
