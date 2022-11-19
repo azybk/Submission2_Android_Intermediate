@@ -73,7 +73,6 @@ class RegisterViewModelTest {
         )
 
         assertTrue(actualRegister is Result.Error)
-        assertEquals(expectedRegister.value, actualRegister)
     }
 
 }

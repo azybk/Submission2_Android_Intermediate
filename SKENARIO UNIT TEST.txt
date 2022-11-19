@@ -11,14 +11,26 @@ b. ketika gagal menampilkan map
 - memastikan data tidak null
 
 
+
 # AddStoryViewModelTest
 - memastikan mengembalikan Result.Success
 
+
+
 # RegisterViewModelTest
-- memastikan mengembalikan Result.Success ketika register berhasil
-- memastikan mengembalikan Result.Error ketika register gagal
+a. ketika user berhasil melakukan register
+  - memastikan mengembalikan Result.Success
+  - memastikan data yang disimpan tidak null
+
+b. ketika user gagal melakukan register
+  - memastikan mengembalikan Result.Error
+
+
 
 # LoginViewModelTest
-- memastikan mengembalikan Result.Success ketika login berhasil
-- memastikan mengembalikan Result.Error ketika login gagal
+a. ketika user berhasil melakukan login
+  - memastikan mengembalikan Result.Success 
+  
+b. ketika user gagal melakukan login
+  - memastikan mengembalikan Result.Error
 

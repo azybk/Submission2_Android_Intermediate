@@ -34,6 +34,8 @@ class StoriesActivity : AppCompatActivity() {
         val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
         binding.rvStories.addItemDecoration(itemDecoration)
 
+        showAllStories()
+
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this@StoriesActivity, StoryActivity::class.java)
             startActivity(intent)
@@ -77,11 +79,6 @@ class StoriesActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return selectItem(this, item)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        showAllStories()
     }
 
     override fun onBackPressed() {

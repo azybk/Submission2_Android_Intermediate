@@ -117,6 +117,9 @@ class StoryActivity : AppCompatActivity() {
                     if (result != null) {
                         when(result) {
                             is Result.Success -> {
+                                val intentStoriesActivity = Intent(this@StoryActivity, StoriesActivity::class.java)
+                                startActivity(intentStoriesActivity)
+
                                 finish()
                                 Log.d("StoryActivity", result.data.message)
                             }
